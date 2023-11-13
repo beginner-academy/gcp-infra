@@ -6,6 +6,6 @@ terraform {
 }
 
 provider "google" {
-  project = var.project
-  region  = var.region
+  project = "gke-terraform-397013"
+  region  = "europe-west2"
 }
