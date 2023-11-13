@@ -2,7 +2,7 @@
 variable "project" {
   type        = string
   description = "ID Google project"
-  #  default     = "gke-terraform-397013"
+    default     = "gke-terraform-397013"
 }
 
 variable "region" {
@@ -15,4 +15,9 @@ variable "data-project" {
   type        = string
   description = "Name of data pipeline project to use as resource prefix"
   default     = "ba"
+}
+
+variable "project_id" {
+  description = "project id"
+  default     = "gke-terraform-397013"
 }
