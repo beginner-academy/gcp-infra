@@ -2,7 +2,7 @@
 variable "project" {
   type        = string
   description = "ID Google project"
-    default     = "gke-terraform-397013"
+  default     = "gke-terraform-397013"
 }
 
 variable "region" {
