@@ -15,7 +15,7 @@ resource "google_container_cluster" "primary" {
     }
   }
 
-  enable_binary_authorization = true
+#  enable_binary_authorization = true
 }
 
 resource "google_container_node_pool" "vault_node_pool" {
