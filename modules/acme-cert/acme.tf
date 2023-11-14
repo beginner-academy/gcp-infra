@@ -23,19 +23,19 @@ resource "acme_certificate" "vault_certificate" {
     local_file.dns_validation_svc_creds
   ]
 }
-
-resource "kubernetes_secret" "vault_acme_cert" {
-  metadata {
-    name      = var.cert_secret_name
-    namespace = var.vault_namespace
-  }
-
-  data = {
-    "tls.ca"  = acme_certificate.vault_certificate.issuer_pem
-    "tls.crt" = acme_certificate.vault_certificate.certificate_pem
-    "tls.key" = acme_certificate.vault_certificate.private_key_pem
-  }
-
-  type = "Opaque"
-}
-
+#
+#resource "kubernetes_secret" "vault_acme_cert" {
+#  metadata {
+#    name      = var.cert_secret_name
+#    namespace = var.vault_namespace
+#  }
+#
+#  data = {
+#    "tls.ca"  = acme_certificate.vault_certificate.issuer_pem
+#    "tls.crt" = acme_certificate.vault_certificate.certificate_pem
+#    "tls.key" = acme_certificate.vault_certificate.private_key_pem
+#  }
+#
+#  type = "Opaque"
+#}
+#

@@ -11,9 +11,9 @@ variable "cluster_cert" {
 variable "GOOGLE_CREDENTIALS" {
 }
 
-variable "vault_namespace" {
-  type = string
-}
+#variable "vault_namespace" {
+#  type = string
+#}
 
 variable "cert_secret_name" {
   type        = string
