@@ -44,10 +44,9 @@ variable "cluster_name" {
   default     = "vault"
 }
 
-variable "credentials_file" {
+variable "GOOGLE_CREDENTIALS" {
   type        = string
   description = "Path to GCP Credentials JSON file"
-  default     = "./Users/sankotni/Downloads/terraform-gcp-credentials.json"
 }
 
 variable "num_vault_pods" {

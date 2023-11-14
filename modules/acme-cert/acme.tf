@@ -16,7 +16,7 @@ resource "acme_certificate" "vault_certificate" {
     provider = "gcloud"
     config = {
       GCE_PROJECT              = var.project_id
-      GCE_SERVICE_ACCOUNT_FILE = file(var.credentials_file)
+      GCE_SERVICE_ACCOUNT = var.GOOGLE_CREDENTIALS
     }
   }
   depends_on = [

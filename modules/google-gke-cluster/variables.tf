@@ -2,7 +2,7 @@ variable "project_id" {
   type = string
 }
 
-variable "credentials_file" {
+variable "GOOGLE_CREDENTIALS" {
   type = string
 }
 

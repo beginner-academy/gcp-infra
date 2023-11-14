@@ -8,7 +8,7 @@ variable "cluster_endpoint" {
 variable "cluster_cert" {
 }
 
-variable "credentials_file" {
+variable "GOOGLE_CREDENTIALS" {
 }
 
 variable "vault_namespace" {

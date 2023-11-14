@@ -2,7 +2,7 @@ variable "region" {
   type = string
 }
 
-variable "credentials_file" {
+variable "GOOGLE_CREDENTIALS" {
   type = string
 }
 
