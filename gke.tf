@@ -37,7 +37,7 @@ resource "google_container_cluster" "primary" {
   subnetwork = google_compute_subnetwork.subnet.name
 }
 
- Separately Managed Node Pool
+# Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
   name     = google_container_cluster.primary.name
   location = var.region
