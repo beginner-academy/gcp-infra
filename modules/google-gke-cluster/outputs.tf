@@ -9,7 +9,8 @@ output "endpoint" {
 
 output "node_pool_id" {
   description = "Container Cluster Node Pool"
-  value       = google_container_node_pool.vault_node_pool.id
+  value       = google_container_node_pool.primary_nodes.id
+  //vault_node_pool.id
 }
 
 output "ca_certificate" {
