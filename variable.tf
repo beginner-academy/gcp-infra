@@ -44,10 +44,10 @@ variable "cluster_name" {
   default     = "vault"
 }
 
-#variable "GOOGLE_CREDENTIALS" {
-#  type        = string
-#  description = "Path to GCP Credentials JSON file"
-#}
+variable "GOOGLE_CREDENTIALS" {
+  type        = string
+  description = "Path to GCP Credentials JSON file"
+}
 
 variable "num_vault_pods" {
   type        = number
