@@ -39,7 +39,7 @@ variable "node_image_type" {
   type    = string
   default = "COS"
 }
-
-variable "unseal_service_account" {
-  type = string
-}
+#
+#variable "unseal_service_account" {
+#  type = string
+#}
