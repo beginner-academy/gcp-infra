@@ -1,12 +1,12 @@
 variable "project_id" {
   type = string
 }
-
-variable "cluster_endpoint" {
-}
-
-variable "cluster_cert" {
-}
+#
+#variable "cluster_endpoint" {
+#}
+#
+#variable "cluster_cert" {
+#}
 
 variable "GOOGLE_CREDENTIALS" {
 }
