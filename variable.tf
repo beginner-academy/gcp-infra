@@ -88,7 +88,7 @@ variable "cert_country" {
 variable "public_cert_email_address" {
   type        = string
   description = "Email address to use for the public-facing TLS cert"
-  default     = "sangamesh.kotni@gmailcom"
+  default     = "sangamesh.mk@gmail.com"
 }
 
 variable "vault_version" {
