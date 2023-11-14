@@ -18,10 +18,17 @@ resource "google_container_cluster" "primary" {
 #  enable_binary_authorization = true
 }
 
+## GKE cluster
+data "google_container_engine_versions" "gke_version" {
+  location       = var.region
+  version_prefix = "1.27."
+}
+
 resource "google_container_node_pool" "vault_node_pool" {
   name       = "vault-node-pool"
   location   = var.cluster_location
   cluster    = google_container_cluster.primary.name
+  version    = data.google_container_engine_versions.gke_version.release_channel_latest_version["STABLE"]
   node_count = var.initial_node_count
 
   node_config {
