@@ -2,6 +2,7 @@ resource "google_container_cluster" "primary" {
   name     = var.cluster_name
   project  = var.project_id
   location = var.cluster_location
+  deletion_protection      = false
 
   initial_node_count       = 1
   remove_default_node_pool = true
@@ -30,7 +31,6 @@ resource "google_container_node_pool" "primary_nodes" {
   name     = google_container_cluster.primary.name
   location = var.region
   cluster  = google_container_cluster.primary.name
-  deletion_protection = false
 
   version    = data.google_container_engine_versions.gke_version.release_channel_latest_version["STABLE"]
   node_count = var.initial_node_count
