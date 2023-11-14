@@ -35,7 +35,7 @@ variable "project_id" {
 variable "cluster_zone" {
   type        = string
   description = "GCP zone in which to instantiate the Kubernetes cluster"
-  default     = "europe-west2-a"
+  default     = "europe-west2"
 }
 
 variable "cluster_name" {

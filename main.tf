@@ -1,24 +1,24 @@
-#module "gke-cluster" {
-#  source                 = "./modules/google-gke-cluster/"
-#  GOOGLE_CREDENTIALS     = var.GOOGLE_CREDENTIALS
-#  region                 = var.region
-#  project_id             = var.project_id
-#  cluster_name           = var.cluster_name
-#  cluster_location       = var.cluster_zone
-#  network                = google_compute_network.vpc.id
-#  subnetwork             = google_compute_subnetwork.subnet.id
-#  initial_node_count     = var.num_vault_pods
-##  unseal_service_account = module.unseal_kms.service_account
-#}
-#
-#module "tls" {
-#  source            = "./modules/tls-private"
-#  hostname          = "*.vault-internal"
-#  organization_name = var.cert_organization_name
-#  common_name       = var.cert_common_name
-#  country           = var.cert_country
-#}
-#
+module "gke-cluster" {
+  source                 = "./modules/google-gke-cluster/"
+  GOOGLE_CREDENTIALS     = var.GOOGLE_CREDENTIALS
+  region                 = var.region
+  project_id             = var.project_id
+  cluster_name           = var.cluster_name
+  cluster_location       = var.cluster_zone
+  network                = google_compute_network.vpc.id
+  subnetwork             = google_compute_subnetwork.subnet.id
+  initial_node_count     = var.num_vault_pods
+#  unseal_service_account = module.unseal_kms.service_account
+}
+
+module "tls" {
+  source            = "./modules/tls-private"
+  hostname          = "*.vault-internal"
+  organization_name = var.cert_organization_name
+  common_name       = var.cert_common_name
+  country           = var.cert_country
+}
+
 module "acme_cert" {
   source             = "./modules/acme-cert"
   project_id         = var.project_id
