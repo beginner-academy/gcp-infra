@@ -11,25 +11,25 @@ module "gke-cluster" {
   #  unseal_service_account = module.unseal_kms.service_account
 }
 
-#module "tls" {
-#  source            = "./modules/tls-private"
-#  hostname          = "*.vault-internal"
-#  organization_name = var.cert_organization_name
-#  common_name       = var.cert_common_name
-#  country           = var.cert_country
-#}
-#
-#module "acme_cert" {
-#  source             = "./modules/acme-cert"
-#  project_id         = var.project_id
-#  GOOGLE_CREDENTIALS = var.GOOGLE_CREDENTIALS
-#  #  cluster_endpoint   = module.gke-cluster.endpoint
-#  #  cluster_cert       = module.gke-cluster.ca_certificate
-#  ##  vault_namespace    = module.vault.vault_namespace
-#  cert_secret_name = var.cert_secret_name
-#  vault_hostname   = var.vault_hostname
-#  email_address    = var.public_cert_email_address
-#}
+module "tls" {
+  source            = "./modules/tls-private"
+  hostname          = "*.vault-internal"
+  organization_name = var.cert_organization_name
+  common_name       = var.cert_common_name
+  country           = var.cert_country
+}
+
+module "acme_cert" {
+  source             = "./modules/acme-cert"
+  project_id         = var.project_id
+  GOOGLE_CREDENTIALS = var.GOOGLE_CREDENTIALS
+  #  cluster_endpoint   = module.gke-cluster.endpoint
+  #  cluster_cert       = module.gke-cluster.ca_certificate
+  ##  vault_namespace    = module.vault.vault_namespace
+  cert_secret_name = var.cert_secret_name
+  vault_hostname   = var.vault_hostname
+  email_address    = var.public_cert_email_address
+}
 #
 #module "external_ip_address" {
 #  source     = "./modules/google-static-ip"
