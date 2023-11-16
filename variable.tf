@@ -51,7 +51,7 @@ variable "GOOGLE_CREDENTIALS" {
 
 variable "num_vault_pods" {
   type        = number
-  default     = 3
+  default     = 1
   description = "Number of Vault pods to create in GKE"
 }
 
