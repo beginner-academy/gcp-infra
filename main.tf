@@ -10,14 +10,14 @@ module "gke-cluster" {
   initial_node_count = var.num_vault_pods
   #  unseal_service_account = module.unseal_kms.service_account
 }
-
-module "tls" {
-  source            = "./modules/tls-private"
-  hostname          = "*.vault-internal"
-  organization_name = var.cert_organization_name
-  common_name       = var.cert_common_name
-  country           = var.cert_country
-}
+#
+#module "tls" {
+#  source            = "./modules/tls-private"
+#  hostname          = "*.vault-internal"
+#  organization_name = var.cert_organization_name
+#  common_name       = var.cert_common_name
+#  country           = var.cert_country
+#}
 
 module "acme_cert" {
   source             = "./modules/acme-cert"
