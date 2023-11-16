@@ -64,7 +64,7 @@ variable "cert_secret_name" {
 variable "vault_hostname" {
   type        = string
   description = "Domain name to use for the DNS zone, A record, and TLS Cert"
-  default     = "vault.domain.com"
+  default     = "mothertongue.online"
 }
 
 variable "cert_organization_name" {
