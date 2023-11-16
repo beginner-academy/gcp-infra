@@ -1,14 +1,14 @@
 module "gke-cluster" {
-  source                 = "./modules/google-gke-cluster/"
-  GOOGLE_CREDENTIALS     = var.GOOGLE_CREDENTIALS
-  region                 = var.region
-  project_id             = var.project_id
-  cluster_name           = var.cluster_name
-  cluster_location       = var.cluster_zone
-  network                = google_compute_network.vpc.id
-  subnetwork             = google_compute_subnetwork.subnet.id
-  initial_node_count     = var.num_vault_pods
-#  unseal_service_account = module.unseal_kms.service_account
+  source             = "./modules/google-gke-cluster/"
+  GOOGLE_CREDENTIALS = var.GOOGLE_CREDENTIALS
+  region             = var.region
+  project_id         = var.project_id
+  cluster_name       = var.cluster_name
+  cluster_location   = var.cluster_zone
+  network            = google_compute_network.vpc.id
+  subnetwork         = google_compute_subnetwork.subnet.id
+  initial_node_count = var.num_vault_pods
+  #  unseal_service_account = module.unseal_kms.service_account
 }
 
 module "tls" {
@@ -23,12 +23,12 @@ module "acme_cert" {
   source             = "./modules/acme-cert"
   project_id         = var.project_id
   GOOGLE_CREDENTIALS = var.GOOGLE_CREDENTIALS
-#  cluster_endpoint   = module.gke-cluster.endpoint
-#  cluster_cert       = module.gke-cluster.ca_certificate
-##  vault_namespace    = module.vault.vault_namespace
-  cert_secret_name   = var.cert_secret_name
-  vault_hostname     = var.vault_hostname
-  email_address      = var.public_cert_email_address
+  #  cluster_endpoint   = module.gke-cluster.endpoint
+  #  cluster_cert       = module.gke-cluster.ca_certificate
+  ##  vault_namespace    = module.vault.vault_namespace
+  cert_secret_name = var.cert_secret_name
+  vault_hostname   = var.vault_hostname
+  email_address    = var.public_cert_email_address
 }
 #
 #module "external_ip_address" {
