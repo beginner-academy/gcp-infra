@@ -1,5 +1,5 @@
 output "endpoint" {
-  sensitive   = true
+  //sensitive   = true
   description = "Cluster endpoint"
   value       = google_container_cluster.primary.endpoint
   depends_on = [
